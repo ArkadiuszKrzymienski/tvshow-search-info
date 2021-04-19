@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #77848C;
+  font-family: "Barlow", sans-serif;
+}
+
+#search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  background-color: #012E40;
+}
+
+#search input {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #F0F1F2;
+  border: 3px solid #F0F1F2;
+  color: #012E40;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+#search input:focus {
+  outline: none;
+  border: 3px solid #012E40;
+}
+
+.series-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.showbox {
+  position: relative;
+  margin: 5px;
+  padding: 10px;
+  width: 320px;
+  color: #F0F1F2;
+  background-color: #B8BCBF;
+  border-radius: 10px;
+  font-size: 1.4rem;
+}
+
+.showbox img {
+  width: 100%;
+}
+
+.showbox div {
+  margin: 4px;
+}
+
+.showbox div .show-genres {
+  font-size: 1rem;
+  color: #013440;
+}
+
+.showbox div .show-overview {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #013440;
+  opacity: 0;
+  padding: 2rem;
+}
+
+.showbox div .show-overview :hover {
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */
