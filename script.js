@@ -8,10 +8,8 @@ let showsApp = {
     showsDataSection: null,
     init: function() {
         this.searchInput = document.getElementById('search-input');
-        this.searchInput.addEventListener('keyup', (e) => {
-            if(e.keyCode == 13){
+        this.searchInput.addEventListener('keyup', () => {
                 this.loadData(this.searchInput.value)
-            }
         } )
         this.showsDataSection = document.querySelector('.series-section');
         this.loadData('friends')

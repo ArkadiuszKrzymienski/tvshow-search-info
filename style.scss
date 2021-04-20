@@ -11,6 +11,12 @@ $ff: 'Barlow', sans-serif;
     box-sizing: border-box;
 }
 
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 body{
     background-color: $white;
     font-family: $ff;
@@ -44,6 +50,7 @@ body{
 
 .series-section{
     display: flex;
+    flex-grow: 1;
     flex-wrap: wrap;
     justify-content: center;
     padding: 50px 0;
