@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #77848C;
+  background-color: white;
   font-family: "Barlow", sans-serif;
 }
 
@@ -18,23 +18,27 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 10px;
-  background-color: #012E40;
+  background-color: #BF2C1F;
 }
 
 #search input {
   display: inline-block;
   padding: 5px 10px;
-  background-color: #F0F1F2;
-  border: 3px solid #F0F1F2;
-  color: #012E40;
+  background-color: #731D0A;
+  border: 3px solid #731D0A;
+  color: white;
   font-family: "Barlow", sans-serif;
   font-size: 1.3rem;
   border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  -webkit-transition: .3s ease-in;
+  transition: .3s ease-in;
 }
 
 #search input:focus {
   outline: none;
-  border: 3px solid #012E40;
+  border: 3px solid #BF2C1F;
 }
 
 .series-section {
@@ -43,17 +47,42 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px 0;
 }
 
 .showbox {
   position: relative;
   margin: 5px;
-  padding: 10px;
   width: 320px;
-  color: #F0F1F2;
-  background-color: #B8BCBF;
-  border-radius: 10px;
+  color: white;
+  background-color: #731D0A;
   font-size: 1.4rem;
+  overflow: hidden;
+}
+
+.showbox * {
+  scrollbar-width: thin;
+}
+
+.showbox *::-webkit-scrollbar {
+  width: 10px;
+}
+
+.showbox *::-webkit-scrollbar-track {
+  background-color: #731D0A;
+}
+
+.showbox *::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+.showbox:hover .show-overview {
+  opacity: 1;
+  -webkit-animation: infoSlider .4s ease-in;
+  animation: infoSlider .4s ease-in;
 }
 
 .showbox img {
@@ -61,26 +90,90 @@ body {
 }
 
 .showbox div {
-  margin: 4px;
+  padding: 4px;
 }
 
-.showbox div .show-genres {
+.showbox div.show-genres {
   font-size: 1rem;
-  color: #013440;
+  color: #c8c8c8;
 }
 
-.showbox div .show-overview {
+.showbox div.show-overview {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #013440;
+  background-color: #731D0A;
   opacity: 0;
   padding: 2rem;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+  overflow-y: scroll;
+  font-size: 1rem;
 }
 
-.showbox div .show-overview :hover {
-  opacity: 1;
+.tv-maze-info {
+  padding: 10px;
+  text-align: center;
+  background-color: #731D0A;
+}
+
+.tv-maze-info a {
+  color: white;
+  text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+@-webkit-keyframes infoSlider {
+  0% {
+    top: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  90% {
+    border-radius: 50%;
+  }
+  100% {
+    top: 0%;
+    border-radius: 0;
+    height: 100%;
+  }
+}
+
+@keyframes infoSlider {
+  0% {
+    top: 100%;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    height: 100%;
+  }
+  80% {
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+  }
+  100% {
+    top: 0%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    height: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

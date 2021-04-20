@@ -1,8 +1,7 @@
-$darkgrey: #77848C;
-$lightgrey: #B8BCBF;
-$white: #F0F1F2;
-$blueaccent: #012E40;
-$greenaccent: #013440;
+$white: white;
+$lightgrey: rgb(200,200,200);
+$darkred: #731D0A;
+$lightred: #BF2C1F;
 $ff: 'Barlow', sans-serif;
 
 
@@ -13,7 +12,7 @@ $ff: 'Barlow', sans-serif;
 }
 
 body{
-    background-color: $darkgrey;
+    background-color: $white;
     font-family: $ff;
 }
 
@@ -21,21 +20,24 @@ body{
     display: flex;
     justify-content: center;
     padding: 10px;
-    background-color: $blueaccent;
+    background-color: $lightred;
 
     input{
         display: inline-block;
         padding: 5px 10px;
-        background-color: $white;
-        border: 3px solid $white;
-        color: $blueaccent;
+        background-color: $darkred;
+        border: 3px solid $darkred;
+        color: $white;
         font-family: $ff;
         font-size: 1.3rem;
         border-radius: 10px;
+        width: 50%;
+        text-align: center;
+        transition: .3s ease-in ;
 
         &:focus{
             outline: none;
-            border: 3px solid $blueaccent;
+            border: 3px solid $lightred;
         }
     }
 }
@@ -43,45 +45,131 @@ body{
 .series-section{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 0;
 }
 
 .showbox{
     position: relative;
     margin: 5px;
-    padding: 10px;
     width: 320px;
     color: $white;
-    background-color: $lightgrey;
-    border-radius: 10px;
+    background-color: $darkred;
     font-size: 1.4rem;
+    overflow: hidden;
+
+    *{
+        scrollbar-width: thin;
+    }
+    
+    *::-webkit-scrollbar{
+        width: 10px;
+    }
+    
+    *::-webkit-scrollbar-track{
+        background-color: $darkred;
+    }
+    
+    *::-webkit-scrollbar-thumb{
+        background-color: $white;
+    }
+
+    &:hover .show-overview{
+        opacity: 1;
+        -webkit-animation: infoSlider .4s ease-in;
+                animation: infoSlider .4s ease-in;
+    }
 
     img{
         width: 100%;
     }
 
     div{
-        margin: 4px;
+        padding: 4px;
     
-        .show-genres{
+        &.show-genres{
             font-size: 1rem;
-            color: $greenaccent;
+            color: $lightgrey;
         }
 
-        .show-overview{
+        &.show-overview{
             position: absolute;
             top: 0;
             bottom: 0;
             left: 0;
             right: 0;
-            background-color: $greenaccent;
+            background-color: $darkred;
             opacity: 0;
             padding: 2rem;
-        
-            :hover{
-                opacity: 1;
-            }
+            transition: opacity 0.3s ease-in;
+            overflow-y: scroll;
+            font-size: 1rem;
         }
-
     }
 }
 
+
+
+
+
+.tv-maze-info{
+    padding: 10px;
+    text-align: center;
+    background-color: $darkred;
+    
+    a{
+        color:  $white;
+        text-decoration: none;
+        
+    }
+}
+
+::-webkit-input-placeholder {
+    color: white;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+    color: white;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+    }
+    :-ms-input-placeholder {
+    color: white;
+    }
+
+
+    @-webkit-keyframes infoSlider {
+        0%{
+            top: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        90%{
+            border-radius: 50%;
+        }
+        100%{
+            top: 0%;
+            border-radius: 0;
+            height: 100%;
+        }
+    }
+
+
+    @keyframes infoSlider {
+        0%{
+            top: 100%;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+            height: 100%;
+        }
+        80%{
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+        }
+        100%{
+            top: 0%;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            height: 100%;
+        }
+    }   
